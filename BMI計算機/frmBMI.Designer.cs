@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBMI));
             this.grpInput = new System.Windows.Forms.GroupBox();
-            this.txtHeight = new System.Windows.Forms.TextBox();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.grpOutput = new System.Windows.Forms.GroupBox();
-            this.lblHeight = new System.Windows.Forms.Label();
-            this.lblWeight = new System.Windows.Forms.Label();
-            this.lblBMI = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
             this.btnRun = new System.Windows.Forms.Button();
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.grpOutput = new System.Windows.Forms.GroupBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.lblBMI = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpInput.SuspendLayout();
             this.grpOutput.SuspendLayout();
@@ -59,13 +59,34 @@
             this.grpInput.TabStop = false;
             this.grpInput.Text = "輸入";
             // 
-            // txtHeight
+            // btnRun
             // 
-            this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHeight.Location = new System.Drawing.Point(258, 47);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(100, 34);
-            this.txtHeight.TabIndex = 0;
+            this.btnRun.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRun.Location = new System.Drawing.Point(395, 57);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(114, 101);
+            this.btnRun.TabIndex = 4;
+            this.btnRun.Text = "計算";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // lblWeight
+            // 
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Location = new System.Drawing.Point(67, 124);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(88, 25);
+            this.lblWeight.TabIndex = 3;
+            this.lblWeight.Text = "體重(kg)";
+            // 
+            // lblHeight
+            // 
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Location = new System.Drawing.Point(67, 47);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(93, 25);
+            this.lblHeight.TabIndex = 2;
+            this.lblHeight.Text = "身高(cm)";
             // 
             // txtWeight
             // 
@@ -74,6 +95,14 @@
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(100, 34);
             this.txtWeight.TabIndex = 1;
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHeight.Location = new System.Drawing.Point(258, 47);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(100, 34);
+            this.txtHeight.TabIndex = 0;
             // 
             // grpOutput
             // 
@@ -85,35 +114,6 @@
             this.grpOutput.TabIndex = 2;
             this.grpOutput.TabStop = false;
             this.grpOutput.Text = "計算結果";
-            // 
-            // lblHeight
-            // 
-            this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(67, 47);
-            this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(93, 25);
-            this.lblHeight.TabIndex = 2;
-            this.lblHeight.Text = "身高(cm)";
-            // 
-            // lblWeight
-            // 
-            this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(67, 124);
-            this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(88, 25);
-            this.lblWeight.TabIndex = 3;
-            this.lblWeight.Text = "體重(kg)";
-            // 
-            // lblBMI
-            // 
-            this.lblBMI.AutoSize = true;
-            this.lblBMI.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblBMI.Location = new System.Drawing.Point(16, 75);
-            this.lblBMI.Name = "lblBMI";
-            this.lblBMI.Size = new System.Drawing.Size(181, 25);
-            this.lblBMI.TabIndex = 2;
-            this.lblBMI.Text = "身體質量指數(BMI)";
-            this.lblBMI.Click += new System.EventHandler(this.lblBMI_Click);
             // 
             // lblResult
             // 
@@ -129,16 +129,16 @@
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResult.Click += new System.EventHandler(this.lblResult_Click);
             // 
-            // btnRun
+            // lblBMI
             // 
-            this.btnRun.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnRun.Location = new System.Drawing.Point(395, 57);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(114, 101);
-            this.btnRun.TabIndex = 4;
-            this.btnRun.Text = "計算";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            this.lblBMI.AutoSize = true;
+            this.lblBMI.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblBMI.Location = new System.Drawing.Point(16, 75);
+            this.lblBMI.Name = "lblBMI";
+            this.lblBMI.Size = new System.Drawing.Size(181, 25);
+            this.lblBMI.TabIndex = 2;
+            this.lblBMI.Text = "身體質量指數(BMI)";
+            this.lblBMI.Click += new System.EventHandler(this.lblBMI_Click);
             // 
             // pictureBox1
             // 
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1526, 985);
+            this.ClientSize = new System.Drawing.Size(1526, 992);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpOutput);
             this.Controls.Add(this.grpInput);
